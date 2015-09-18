@@ -31,3 +31,11 @@ a:active {
     height:20px;
     background:white;
 }
+
+#PWGenBox{
+    padding: 1em;
+    background-color: dodgerblue;
+    color: white;
+    font-weight: bolder;
+    margin-bottom: 1em;
+}

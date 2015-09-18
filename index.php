@@ -24,27 +24,44 @@
 
             <!-- include the algorithm php file -->
             <?php require("logic.php") ?>
-
+            
+            <div id="PWGenBox" style="text-align:center;font-size:3em;"> <?php echo $password ?></div>
                 <!-- HTML form used to ask user for an input -->
+                <!-- the php if statements are used to set the values user entered after the form has been submitted -->
                 <form method='POST' action='index.php' class="pure-form">
-
-                    <input type='number' name='wordCount' placeholder="Enter a Number (1-9), default: 4" max=9>
+                    Enter a number: (1-9)
+                    <input type='number' name='wordCount' placeholder="(1-9), default: 4" max=9 min=1 style="width: 10em" value="<?php echo $UserInput[$wordCount];?>" required>
+                    <br>
+                    <br> Add a number
+                    <input type='checkbox' <?php if ($UserInput[$addNumber] == 'on') echo 'checked';?> name='addNumber'>
+                    <br>
+                    <br> Add a symbol
+                    <input type='checkbox' <?php if ($UserInput[$addSymbol] == 'on') echo 
+'checked';?> name='addSymbol'>
+                    <br>
+                    <br>Select a separator ( -.*&amp;^%$#! )
+                    <select name="addSeparator">
+                        <option <?php if($UserInput[$addSeparator] == '-') echo 'selected';?>value="-">-</option>
+                        <option <?php if($UserInput[$addSeparator] == '.') echo 'selected';?> value=".">.</option>
+                        <option <?php if($UserInput[$addSeparator] == '*') echo 'selected';?> value="*">*</option>
+                        <option <?php if($UserInput[$addSeparator] == '&') echo 'selected';?> value="&">&amp;</option>
+                        <option <?php if($UserInput[$addSeparator] == '^') echo 'selected';?> value="^">^</option>
+                        <option <?php if($UserInput[$addSeparator] == '%') echo 'selected';?> value="%">%</option>
+                        <option <?php if($UserInput[$addSeparator] == '$') echo 'selected';?> value="$">$</option>
+                        <option <?php if($UserInput[$addSeparator] == '#') echo 'selected';?> value="#">#</option>
+                        <option <?php if($UserInput[$addSeparator] == '@') echo 'selected';?> value="@">@</option>
+                        <option <?php if($UserInput[$addSeparator] == '!') echo 'selected';?> value="!">!</option>
+                        
+                    </select>
                     <br>
                     <br>
-                    <input type='checkbox' name='addNumber'> Add a number
-                    <br>
-                    <br>
-                    <input type='checkbox' name='addSymbol'> Add a symbol
-                    <br>
-                    <br>
-
                     <input type='submit' value='Generate Password' class="pure-button pure-button-primary">
 
                 </form>
 
 
-                <?php print_r($_POST); ?>
-
+                <?php //print_r($_POST); ?>
+                
                     <!-- Brief Description -->
                     <h3>What is xkcd password generator?</h3>
                     <img src="http://imgs.xkcd.com/comics/password_strength.png" width=500>
