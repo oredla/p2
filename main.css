@@ -1,18 +1,15 @@
 body {
     color: darkslateblue;
 }
-
 footer {
     font-size: 0.8em;
     color: gray;
 }
-
 li {
     display: inline-block;
     background-color: floralwhite;
     padding: 1em;
 }
-
 a:link,
 a:hover,
 a:visited,
@@ -21,21 +18,23 @@ a:active {
     color: cornflowerblue;
     font-weight: bold;
 }
-
 .shortHR {
     width: 65%;
     text-align: center;
 }
-    input[type='checkbox'] {
-    width:20px;
-    height:20px;
-    background:white;
+input[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+    background: white;
 }
-
-#PWGenBox{
+#PWGenBox {
     padding: 1em;
     background-color: dodgerblue;
     color: white;
     font-weight: bolder;
     margin-bottom: 1em;
+}
+#description {
+    text-align: center;
+    padding-top: 2em;
 }
