@@ -92,16 +92,12 @@
                             </div>
                         </div>
                         <div class="pure-u-1 pure-u-lg-1-8"></div>
-
+                        <footer>
+                            <!-- include the footer.php file for credit at the bottom -->
+                            <?php include("footer.php") ?>
+                        </footer>
                     </div>
                     <div class="pure-u-1 pure-u-lg-1-8"></div>
         </div>
-
-        <footer>
-            <!-- include the footer.php file for credit at the bottom -->
-            <?php include("footer.php") ?>
-        </footer>
-
 </body>
-
 </html>
