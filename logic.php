@@ -1,6 +1,6 @@
 <?php
     //Variables
-    $WordList = Array('about', 'after', 'again', 'air', 'all', 'word', 'first', 'was', 'good', 'love', 'patience', 'could', 'apple', 'orange', 'banana'); 
+    $WordList = Array('about', 'after', 'again', 'air', 'all', 'word', 'first', 'was', 'good', 'love', 'patience', 'could', 'apple', 'orange', 'banana', 'get', 'zoo'); 
     $SymbolList = Array('!', '@', '$', '%', '^', '*', '.', '-'); 
     $wordCount = 'wordCount';
     $addNumber = 'addNumber';
@@ -8,22 +8,36 @@
     $addSeparator = 'addSeparator';
     $itIsON = 'on';
     $password = ''; 
+
     #How Secure is My Password? 
     $lengthOfPassword = '';
     $howSecureTime = '';
     $guessPerSecond = '1000';
     $howSecureColor = '';
-    $howSecurePrecentage ='0';
-    $usedNum = Array();
+    $howSecurePrecentage = '0';
+    $usedNum = Array();    
+    $howSecureDivider = '730';
+
+    #Function to scrap the word list files
+    $output = Array();
+    $input = Array();
+for($j = 1; $j <= 5; $j=$j+2){
+    $URL1 = '0' . $j;
+    $URL2 = '0' . strval($j+1);
+    $scraper_URL = 'http://www.paulnoll.com/Books/Clear-English/words-' . $URL1 . '-' . $URL2 . '-hundred.html';
+    #echo "scraper URL: " .$scraper_URL . " | ";
+    $input = file_get_contents($scraper_URL); 
+    preg_match_all("/<li>(.*?)<\/li>/s", $input, $output, PREG_SET_ORDER);
+    #print_r ($output);
+    for($i = 0; $i < count($output); $i++){
+        array_push($WordList, trim($output[$i][1]));
+    }
+}
     #debug printout for $WordList
-    //print_r ($WordList);
+    #print_r ($WordList);
 
-    #debug printout for viewing User's Input in $_POST
-    //print_r ($_POST);
-
-    //$_GET is the User Input
+    #$_GET is the User Input, $UserInput used to store all the data
     $UserInput = Array();
-    //$UserInput = Array($wordCount => '4', $addNumber => '', $addSymbol => '', $addSeparator => '-');
 
     #dummy variables for logic.php to test. 
     //$_GET = Array($wordCount => '4', $addNumber => 'on', $addSymbol => 'on', $addSeparator => '-');
@@ -118,7 +132,7 @@ else{
         $howSecureTime = pow(2, $lengthOfPassword);
         #echo " | exponential: " . $howSecureTime;
         $howSecureTime = $howSecureTime / $guessPerSecond / 3600 / 24;
-        $howSecureColor = $howSecureTime / 3650;
+        $howSecureColor = $howSecureTime / $howSecureDivider;
         $howSecureTime = round($howSecureTime, 2);
         #echo " | time: " . $howSecureTime . " days.";
         $howSecureTime = "It'll take " . $howSecureTime . " days at " . $guessPerSecond . " guesses/second to guess this password.";
