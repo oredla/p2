@@ -28,15 +28,13 @@
                 <div id="PWGenBox" style="text-align:center;font-size:2em;word-wrap: break-word;">
                     <?php echo $password ?>
                 </div>
-                <center>
-                    <div id="howSecureBox" style="text-align: center;font-size: 1.3em;word-wrap: break-word;background-color: #666;color: white;width: 70%;">
-                        <?php echo $howSecureTime ?>
-                            <div class="progress">
-                                <div class="progress-bar <?php echo $howSecureColor ?> progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $howSecurePrecentage ?>%">
-                                </div>
+                <div id="howSecureBox" style="text-align: center;font-size: 1.3em;word-wrap: break-word;background-color: #666;color: white;width: 70%;margin: auto;">
+                    <?php echo $howSecureTime ?>
+                        <div class="progress">
+                            <div class="progress-bar <?php echo $howSecureColor ?> progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $howSecurePrecentage ?>%">
                             </div>
-                    </div>
-                </center>
+                        </div>
+                </div>
                 <br>
                 <!-- HTML form used to ask user for an input -->
                 <!-- the php if statements are used to set the values user entered after the form has been submitted -->
@@ -85,7 +83,8 @@
                                     </div>
                                     <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                                         <div class="panel-body">
-                                            <img src="http://imgs.xkcd.com/comics/password_strength.png" width="500">
+                                            <img src="http://imgs.xkcd.com/comics/password_strength.png" width="500" alt="xkcd password strength">
+                                            <a href="http://xkcd.com/936/" target="_blank">xkcd password strength original source</a>
                                         </div>
                                     </div>
                                 </div>
@@ -97,7 +96,9 @@
                             <?php include("footer.php") ?>
                         </footer>
                     </div>
-                    <div class="pure-u-1 pure-u-lg-1-8"></div>
         </div>
+        <div class="pure-u-1 pure-u-lg-1-8"></div>
+    </div>
 </body>
+
 </html>
