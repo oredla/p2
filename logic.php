@@ -62,11 +62,11 @@ if(!array_key_exists($addSeparator, $UserInput)){
 #Validation test for $UserInput[$wordCount]
 if(!is_numeric($UserInput[$wordCount])){
     $password = "Invalid Entry: input is not numeric, pls. enter a number between 1 to 9.";
-    echo $password;
+    //echo $password;
 }
 else if(($UserInput[$wordCount] > 9) or ($UserInput[$wordCount] < 0)){
     $password = "Invalid Entry: input is not numeric, pls. enter a number between 1 to 9.";
-    echo $password;
+    //echo $password;
 }
 #Validation test for $UserInput[$addSeparator], it must match one of the value from the $SymbolList
 else if(!in_array($UserInput[$addSeparator], $SymbolList)){
