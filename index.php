@@ -29,7 +29,7 @@
                     <?php echo $password ?>
                 </div>
                 <div id="howSecureBox" style="text-align: center;font-size: 1.3em;word-wrap: break-word;background-color: #666;color: white;width: 70%;margin: auto;">
-                    <?php echo $howSecureTime ?>
+                    <?php echo $returnText ?>
                         <div class="progress">
                             <div class="progress-bar <?php echo $howSecureColor ?> progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $howSecurePrecentage ?>%">
                             </div>
@@ -41,7 +41,7 @@
                 <div style="text-align:center;">
                     <form method='GET' action='index.php' class="pure-form">
                         Enter a number: (1-9)
-                        <input type='number' name='wordCount' placeholder="(1-9), default: 4" max=9 min=1 style="width: 10em" value="<?php echo $UserInput[$wordCount];?>" required>
+                        <input type='number' name='wordCount' placeholder="(1-9)" max=9 min=1 style="width: 10em" value="<?php echo $UserInput[$wordCount];?>" required>
                         <br>
                         <br> Add a number
                         <input type='checkbox' <?php if (array_key_exists($addNumber, $_GET))if ($_GET[$addNumber]=='on' ) echo 'checked';?> name='addNumber'>
@@ -84,7 +84,7 @@
                                     <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                                         <div class="panel-body">
                                             <img src="http://imgs.xkcd.com/comics/password_strength.png" width="500" alt="xkcd password strength">
-                                            <a href="http://xkcd.com/936/" target="_blank">xkcd password strength original source</a>
+                                            <br><a href="http://xkcd.com/936/" target="_blank">xkcd password strength original source</a>
                                         </div>
                                     </div>
                                 </div>
