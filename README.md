@@ -8,7 +8,7 @@ This is the 2nd assignment, P2, a php xkcd style password generator. It generate
 
 
 ## Demo
-TBA
+[http://www.screencast.com/t/zobap3exh7](http://www.screencast.com/t/zobap3exh7)
 
 ## Details for teaching team
 * `$usedNum`: is used to store the random number used, so no words will be picked twice for the password. `Line 88 - 92`
